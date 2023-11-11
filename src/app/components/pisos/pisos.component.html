@@ -1,20 +1,50 @@
-<div class="card">
-  <p-table [value]="arrPisos" styleClass="p-datatable-striped" [tableStyle]="{'min-width': '50rem'}">
-      <ng-template pTemplate="header">
-          <tr>
-              <th>Numero</th>
-              <th>Direccion</th>
-              <th>Postal</th>
-              <th>Valor</th>
-          </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-value>
-          <tr>
-              <td>{{value?.numero}}</td>
-              <td>{{value?.direccion}}</td>
-              <td>{{value?.postal}}</td>
-              <td>{{value?.valor}}</td>
-          </tr>
-      </ng-template>
-  </p-table>
+<div class="row mx-0">
+  <div class="col-lg-12">
+    <div class="p-3">
+      <h1 class="m-0">Lorem ipsum dolor sit amet.</h1>
+      <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa voluptate quos voluptates autem quasi et voluptatum voluptatibus voluptatem, doloremque magnam? Molestias iste quia velit sint autem quas pariatur sunt ratione!</p>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="p-3 rounded">
+      <div class="d-flex justify-content-end align-items-center pb-3">
+        <p-button (onClick)="showDialog('top')" styleClass="button_save" icon="pi pi-save" label="Nuevo piso"></p-button>
+      </div>
+      <p-table scrollHeight="400px" [value]="arrPisos" styleClass="p-datatable-striped" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Numero</th>
+                <th>Direccion</th>
+                <th>Postal</th>
+                <th>Valor</th>
+                <th>Eventos</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-value>
+            <tr>
+                <td>{{value?.numero}}</td>
+                <td>{{value?.direccion}}</td>
+                <td>{{value?.postal}}</td>
+                <td>{{value?.valor}}</td>
+                <td>
+                  <div>
+                    <p-button class="me-2" styleClass="edit" icon="pi pi-pencil"></p-button>
+                    <p-button icon="pi pi-trash"></p-button>
+                  </div>
+                </td>
+            </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
 </div>
+
+
+<!-- Modal para crear un piso -->
+<p-dialog header="Nuevo piso" [(visible)]="visible" [position]="position" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+  <p class="m-0">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</p-dialog>
+<!-- Modal para crear un piso -->

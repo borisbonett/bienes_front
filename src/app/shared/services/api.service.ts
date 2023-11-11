@@ -13,4 +13,9 @@ export class ApiService {
   get(controller: string) {
     return this.http.get(apiUrl.url + controller);
   }
+
+  post(body: object, controller: string) {
+    return this.http.post(apiUrl.url + controller, body,)
+  }
+
 }

@@ -2,3 +2,18 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
+
+.p-button {
+  background: #c2c2c2;
+  border: none;
+}
+
+.button_save {
+  background: #ff385c;
+  border: none;
+}
+
+.rounded { 
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+}

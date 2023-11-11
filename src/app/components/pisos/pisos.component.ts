@@ -9,6 +9,9 @@ import { ApiService } from 'src/app/shared/services/api.service';
 export class PisosComponent implements OnInit{
 
   public arrPisos:any[] = [];
+  public visible:boolean = false;
+
+  public position:any;
 
   constructor(private apiService:ApiService) {
   }
@@ -25,6 +28,14 @@ export class PisosComponent implements OnInit{
     }, (err:any) => {
       console.log(err);
     });
+  }
+
+  public showDialog(position: string): void {
+    this.position = position;
+    this.visible = true;
+  }
+
+  public sendPisos(): void {
   }
 
 }
