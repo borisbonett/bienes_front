@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PisosComponent } from './components/pisos/pisos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './shared/services/api.service';
+import { FormsModule } from '@angular/forms';
 
 const APP_PROVIDERS = [
   ApiService
@@ -20,7 +21,8 @@ const APP_PROVIDERS = [
     BrowserModule,
     AppRoutingModule,
     PrimengModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [APP_PROVIDERS],
   bootstrap: [AppComponent]

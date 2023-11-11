@@ -53,46 +53,46 @@
     <div class="col-lg-6">
       <div class="my-3">
         <i class="pi pi-building me-2"></i>
-        <p-dropdown styleClass="" [options]="arrEdificio"  [showClear]="true"  optionLabel="nombre" placeholder="ID piso"></p-dropdown>
+        <p-dropdown  [options]="arrEdificio" [(ngModel)]="seleccionaEdificio" [showClear]="true"  optionLabel="nombre" placeholder="ID piso"></p-dropdown>
       </div>
 
       <div class="p-inputgroup my-3">
         <span class="p-inputgroup-addon">
             <i class="pi pi-home"></i>
         </span>
-        <input pInputText placeholder="Numero del piso" />
+        <input pInputText [(ngModel)]="numeroPiso" placeholder="Numero del piso" />
       </div>
 
       <div class="p-inputgroup my-3">
         <span class="p-inputgroup-addon">
             <i class="pi pi-map-marker"></i>
         </span>
-        <input pInputText placeholder="Dirección" />
+        <input pInputText [(ngModel)]="direccion" placeholder="Dirección" />
       </div>
 
       <div class="p-inputgroup my-3">
         <span class="p-inputgroup-addon">
             <i class="pi pi-table"></i>
         </span>
-        <input pInputText placeholder="Postal" />
+        <input pInputText pKeyFilter="int" [(ngModel)]="postal" placeholder="Postal" />
       </div>
 
       <div class="p-inputgroup my-3">
         <span class="p-inputgroup-addon">
             <i class="pi pi-dollar"></i>
         </span>
-        <input pInputText placeholder="Valor" />
+        <input pInputText pKeyFilter="int" [(ngModel)]="valor" placeholder="Valor" />
       </div>
 
       <div class="p-inputgroup my-3">
         <span class="p-inputgroup-addon">
             <i class="pi pi-sitemap"></i>
         </span>
-        <input pInputText placeholder="Estado" />
+        <input pInputText pKeyFilter="int" [(ngModel)]="estado" placeholder="Estado" />
       </div>
     </div>
     <div>
-      <p-button styleClass="button_red" icon="pi pi-save" label="Guardar"></p-button>
+      <p-button (onClick)="sendPisos()" styleClass="button_red" icon="pi pi-save" label="Guardar"></p-button>
     </div>
   </div>
 </p-dialog>
