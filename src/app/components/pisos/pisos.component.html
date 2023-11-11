@@ -1,0 +1,20 @@
+<div class="card">
+  <p-table [value]="arrPisos" styleClass="p-datatable-striped" [tableStyle]="{'min-width': '50rem'}">
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Numero</th>
+              <th>Direccion</th>
+              <th>Postal</th>
+              <th>Valor</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-value>
+          <tr>
+              <td>{{value?.numero}}</td>
+              <td>{{value?.direccion}}</td>
+              <td>{{value?.postal}}</td>
+              <td>{{value?.valor}}</td>
+          </tr>
+      </ng-template>
+  </p-table>
+</div>

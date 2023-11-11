@@ -1,20 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ButtonModule } from 'primeng/button';
-
+import { PrimengModule } from 'src/app/shared/primeng/primeng.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PisosComponent } from './components/pisos/pisos.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './shared/services/api.service';
+
+const APP_PROVIDERS = [
+  ApiService
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PisosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ButtonModule
+    PrimengModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [APP_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
