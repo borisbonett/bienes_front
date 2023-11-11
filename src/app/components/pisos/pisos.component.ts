@@ -8,16 +8,18 @@ import { ApiService } from 'src/app/shared/services/api.service';
 })
 export class PisosComponent implements OnInit{
 
-  public arrPisos:any[] = [];
-  public visible:boolean = false;
+  public arrPisos: any[] = [];
+  public visible: boolean = false;
 
-  public position:any;
+  public position: any;
+  public arrEdificio: any[] = [];
 
   constructor(private apiService:ApiService) {
   }
 
   ngOnInit(): void {
     this.getPisos();
+    this.getEdificio();
   }
 
 
@@ -28,6 +30,15 @@ export class PisosComponent implements OnInit{
     }, (err:any) => {
       console.log(err);
     });
+  }
+
+  public getEdificio(): void {
+    this.apiService.get(`edificio`).subscribe((res:any) => {
+      console.log(res);
+      this.arrEdificio = res;
+    }, (err:any) => {
+      console.log(err);      
+    })
   }
 
   public showDialog(position: string): void {
